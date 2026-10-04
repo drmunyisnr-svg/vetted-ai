@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vetted AI // Telemetry Data Hub</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: monospace;
+            padding: 16px;
+            margin: 0;
+            width: 320px;
+        }
+        .dashboard-container {
+            border: 1px solid #2c2c2e;
+            padding: 16px;
+            border-radius: 8px;
+            background: #1c1c1e;
+        }
+        h1 {
+            color: #30d158;
+            border-bottom: 1px dashed #2c2c2e;
+            padding-bottom: 8px;
+            margin-top: 0;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .card {
+            background: #000000;
+            border: 1px solid #2c2c2e;
+            padding: 12px;
+            border-radius: 6px;
+        }
+        .label {
+            color: #8e8e93;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+        .value {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+        .neon-green { color: #30d158; }
+        .neon-red { color: #ff453a; }
+        .button-row {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .btn {
+            flex: 1;
+            border: none;
+            padding: 10px;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 11px;
+            cursor: pointer;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .primary-btn {
+            background: #30d158;
+            color: #000000;
+        }
+        .secondary-btn {
+            background: #2c2c2e;
+            color: #ffffff;
+            border: 1px solid #48484a;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <h1>VETTED AI // LOGGER</h1>
+    <p style="margin: 4px 0 0 0; font-size: 10px; color: #8e8e93;">Automatic telemetry stream active.</p>
+    
+    <div class="grid">
+        <div class="card">
+            <div class="label">Page Impressions</div>
+            <div id="log-traffic" class="value neon-green">0</div>
+        </div>
+        <div class="card">
+            <div class="label">Max Risk Delta</div>
+            <div id="log-risk" class="value neon-red">0%</div>
+        </div>
+    </div>
+
+    <div class="button-row">
+        <button class="btn primary-btn" id="sync-btn" type="button">Sync Data</button>
+        <button class="btn secondary-btn" id="export-btn" type="button">Export Ledger</button>
+    </div>
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
